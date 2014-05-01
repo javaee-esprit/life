@@ -21,10 +21,6 @@ public class AgentConverter implements Converter{
 		Agent equivalentAgent = null;
 		HelperBean helperBean = context.getApplication().evaluateExpressionGet(context, "#{helperBean}", HelperBean.class);
 		equivalentAgent = helperBean.find(value);
-		if (equivalentAgent==null) {
-			equivalentAgent = new Agent();
-			equivalentAgent.setName(((HtmlInputText)component).getSubmittedValue().toString());
-		}
 		logger.log(Level.INFO, "S->O : "+value+"->"+equivalentAgent);
 		return equivalentAgent;
 	}

@@ -1,5 +1,6 @@
 package ego.life.web.beans;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ public class AgentBean {
 	private AgentServiceLocal service;
 	
 	private Agent agent;
+	private List<Agent> agents;
 	
 	public AgentBean() {
 		log(this);
@@ -27,14 +29,13 @@ public class AgentBean {
 	public void init(){
 		log(this);
 		agent = service.find("bison");
+		agents = service.findAll();
 	}
 	
-	public String doSave(){
-		log(this);
-		String navigateTo = null;
-		service.save(agent);
-		return navigateTo;
+	public String doRefresh(){
+		return null;
 	}
+	
 
 	public Agent getAgent() {
 		log(agent);
@@ -46,6 +47,16 @@ public class AgentBean {
 		this.agent = agent;
 	}
 	
+	public List<Agent> getAgents() {
+		log(agents);
+		return agents;
+	}
+
+	public void setAgents(List<Agent> agents) {
+		log(agents);
+		this.agents = agents;
+	}
+
 	private void log(Object object) {
         String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
         Logger.getLogger(this.getClass().getName()).log(Level.INFO,methodName + ": " + object);
