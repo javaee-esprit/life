@@ -31,30 +31,24 @@ public class Agent implements Serializable {
 
 
 	public Long getId() {
-		log(this.id);
 		return this.id;
 	}
 
 	public void setId(Long id) {
-		log(id);
 		this.id = id;
 	}   
 	public String getName() {
-		log(this.name);
 		return this.name;
 	}
 
 	public void setName(String name) {
-		log(name);
 		this.name = name;
 	}   
 	public String getRole() {
-		log(this.role);
 		return this.role;
 	}
 
 	public void setRole(String role) {
-		log(role);
 		this.role = role;
 	}
 
@@ -62,7 +56,6 @@ public class Agent implements Serializable {
 	
 	public String toString() {
 		String toString = "Agent [id=" + id + ", name=" + name + ", role=" + role + "]";
-		log(toString);
 		return toString;
 	}
 	

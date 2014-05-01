@@ -9,7 +9,9 @@
 	</h:head>
 	<h:body>
 		<h:form>
-			<h:inputText value="#{agentBean.agent}" />
+			<h:inputText value="#{agentBean.agent}" >
+				<f:converter converterId="ac"/>
+			</h:inputText>
 			<h:commandButton value="save" action="#{agentBean.doSave}" />
 		</h:form>
 	</h:body>
